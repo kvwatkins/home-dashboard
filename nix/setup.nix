@@ -5,6 +5,6 @@
 pkgs.dockerTools.buildImage {   
   name = "hello-docker";
   config = {
-    Cmd = [ "${pkgsLinux.hello}/bin/hello" ]'
+    Cmd = [ "${pkgsLinux.hello}/bin/hello" ];
   };
 }
