@@ -1,3 +1,5 @@
+#!/bin/bash
+
 # Documentation 
 # - https://github.com/NixOS/nixpkgs/blob/master/pkgs/build-support/docker/examples.nix
 
@@ -14,7 +16,7 @@ rec {
      created = "now";
 
      contents = [
-       pkgs.bash
+       pkgs.bashInteractive
        pkgs.cabal2nix
        pkgs.nix-prefetch-git
        pkgs.cabal-install
@@ -25,7 +27,7 @@ rec {
      '';
 
      config = {
-       Cmd = [ "${pkgs.bash}/bin/bash" "-c" "cabal --version" ];
+       Cmd = [ "${pkgs.bashInteractive}/bin/bash"];
        WorkingDir = "/backend";
        Volumes = {
          "/backend" = {};

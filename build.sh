@@ -17,4 +17,4 @@ LOADED_RESULT=`docker load < $(nix-build "$NIX_SETUP_FILE" -o "$OUTPUT_SYM_NAME"
 CONTAINER_NAME=$(echo "$LOADED_RESULT" | cut -c 15-)
 
 # Run Docker Container
-docker run -t $CONTAINER_NAME
+docker run -it $CONTAINER_NAME
